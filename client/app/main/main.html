@@ -1,0 +1,89 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <!-- <video id="example_video_1" class="video-js vjs-default-skin"
+        controls preload="auto" width="640" height="264"
+        data-setup='{"example_option":true}'>
+       <source src="assets/videos/H264_AAC_(1080p)(mkvmerge)-recomend.mp4" type='video/mp4' />
+       <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+      </video> -->
+      <!-- <ul class="list-group">
+        <li ng-repeat="video in videos" class="list-group-item">
+          <div ng-if="isFile(video)"><a href="." ng-click="selectVideo(video)">{{getFileName(video)}}</a></div>
+          <div ng-if="!isFile(video)">
+            <accordion close-others="false">
+              <accordion-group is-open="status.open" class="panel panel-primary">
+                <accordion-heading>
+                  {{getDirectoryName(video)}}
+                </accordion-heading>
+                <ul class="list-group">
+                  <li ng-repeat="subvideo1 in getSubvideosList(video)" class="list-group-item">
+                    <div ng-if="isFile(subvideo1)"><a href="." ng-click="selectVideo(subvideo1)">{{getFileName(subvideo1)}}</a></div>
+                    <div ng-if="!isFile(subvideo1)">
+                      <accordion close-others="false">
+                        <accordion-group is-open="status2.open" class="panel panel-primary">
+                          <accordion-heading>
+                            {{getDirectoryName(subvideo1)}}
+                          </accordion-heading>
+                          <ul class="list-group">
+                            <li ng-repeat="subvideo2 in getSubvideosList(subvideo1)" class="list-group-item">
+                              <div ng-if="isFile(subvideo2)"><a href="." ng-click="selectVideo(subvideo2)">{{getFileName(subvideo2)}}</a></div>
+                              <div ng-if="!isFile(subvideo2)">
+                                
+                              </div>
+                            </li>
+                          </ul>
+                        </accordion-group>
+                      </accordion>
+                    </div>
+                  </li>
+                </ul>
+              </accordion-group>
+            </accordion>
+          </div>
+        </li>
+      </ul> -->
+      <ul class="list-group">
+        <li ng-repeat="path in paths" class="list-group-item">
+          <accordion close-others="false">
+            <accordion-group is-open="status.open" class="panel panel-primary">
+              <accordion-heading>
+                {{getLastFolderName(path)}}
+              </accordion-heading>
+              <ul class="list-group">
+                <li ng-repeat="video in getPathVideos(path)" class="list-group-item">
+                  <a href="." ng-click="selectVideo(video)">{{video.filename}}</a>
+                </li>
+              </ul>
+            </accordion-group>
+          </accordion>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-8">
+      <!-- <video ng-if="currentVideo" id="videoId" controls width="640" height="264">
+       <source src="{{getPath(currentVideo)}}" type='video/mp4' />
+       <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+       <track ng-repeat="subtitle in currentVideo.tracks" src="{{subtitle.src}}" srclang="{{subtitle.lang}}" label="{{subtitle.label}}">
+      </video> -->
+      <iframe src="/player" style="width: 100%;height: 500px;overflow: hidden;" frameBorder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+      <!-- <p>{{currentVideo}}</p> -->
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>

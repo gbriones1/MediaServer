@@ -26,3 +26,17 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+public
+
+.tmp
+
+.idea
+
+client/bower_components
+
+client/assets/videos
+dist
+
+/server/config/local.env.js
+
