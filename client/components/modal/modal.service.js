@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mediaServerApp')
-  .factory('Modal', function ($rootScope, $modal) {
+  .factory('Modal', function ($rootScope, $modal, $timeout) {
     /**
      * Opens a modal
      * @param  {Object} scope      - an object to be merged with modal's scope
@@ -24,6 +24,19 @@ angular.module('mediaServerApp')
 
     // Public API here
     return {
+
+      player: function(callback) {
+        callback = callback || angular.noop;
+        var args = Array.prototype.slice.call(arguments),
+            instance;
+        instance = $modal.open({
+          templateUrl: 'components/modal/playerModal.html',
+        });
+        instance.result.then(function(event) {
+          callback.apply(event, args);
+        });
+        return instance
+      },
 
       /* Confirmation modals */
       confirm: {

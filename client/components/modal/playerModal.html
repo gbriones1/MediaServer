@@ -1,0 +1,7 @@
+<iframe src="/player" style="width: 100%;overflow: hidden;" frameBorder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+<script type="text/javascript">
+	$('iframe').load(function () {
+        $(this).height($(this).contents().find('html').height());
+        $('.modal-dialog').width($('iframe').contents().find('video').width()+10)
+    });
+</script>

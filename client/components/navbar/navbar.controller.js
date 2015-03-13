@@ -3,11 +3,8 @@
 angular.module('mediaServerApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'Videos',
       'link': '/'
-    },{
-      'title': 'Player',
-      'link': '/player'
     }];
 
     $scope.isCollapsed = true;
