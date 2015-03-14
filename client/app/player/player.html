@@ -1,5 +1,5 @@
 <div>
-	<video ng-if="currentVideo" id="videoId" controls class="video-js vjs-default-skin" preload="auto" width="640" height="264" style="margin:auto;">
+	<video ng-if="currentVideo" id="videoId" controls class="video-js vjs-default-skin" preload="auto" width="640" height="480" style="margin:auto;">
 	  <source src="{{getPath(currentVideo)}}" type='video/mp4' />
 	  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 	  <track ng-repeat="subtitle in currentVideo.tracks" src="{{subtitle.src}}" srclang="{{subtitle.lang}}" label="{{subtitle.label}}">

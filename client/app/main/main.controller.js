@@ -5,6 +5,7 @@ angular.module('mediaServerApp')
     $scope.videos = [];
     $scope.paths = [];
     $scope.currentVideo = false;
+    $scope.currentTime = 0;
 
     $http.get('/api/videos').success(function(response) {
       $scope.videos = response.videos;
@@ -62,6 +63,7 @@ angular.module('mediaServerApp')
 
     $scope.selectVideo = function(video){
         $rootScope.currentVideo = video;
+        $rootScope.currentTime = $scope.currentTime;
         var modalInstance = Modal.player();
     }
 

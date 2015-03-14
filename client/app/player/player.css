@@ -1,0 +1,6 @@
+.video-js .vjs-text-track {
+  font-size: 2.5em;
+}
+.video-js.vjs-fullscreen .vjs-text-track {
+  font-size: 6em;
+}
